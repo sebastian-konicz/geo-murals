@@ -20,10 +20,10 @@ def home(request):
     style_rivers = {'color': 'blue'}
     ## adding to view
 
-    folium.GeoJson(os.path.join(shp_dir, 'basin.geojson'), name='basin',
-                   style_function=lambda x: style_basin).add_to(m)
-    folium.GeoJson(os.path.join(shp_dir, 'rivers.geojson'), name='rivers',
-                   style_function=lambda x: style_rivers).add_to(m)
+    # folium.GeoJson(os.path.join(shp_dir, 'basin.geojson'), name='basin',
+    #                style_function=lambda x: style_basin).add_to(m)
+    # folium.GeoJson(os.path.join(shp_dir, 'rivers.geojson'), name='rivers',
+    #                style_function=lambda x: style_rivers).add_to(m)
 
     folium.LayerControl().add_to(m)
     ## exporting
