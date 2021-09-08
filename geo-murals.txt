@@ -18,6 +18,21 @@ cd ~/sebastiankonicz.pythonanywhere.com
 pip3.8 install --user pythonanywhere
 
 
+Mural
+- name
+- typ (art, commercial)
+- author
+- studio
+- street
+- lon
+- lat
+- photo
+- date
+
+metody
+- publish
+- edit
+
 
     # m = folium.Map(location=[-16.22, -71.59], zoom_start=10)
 

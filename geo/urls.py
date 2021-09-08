@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('geoApp.urls')),
+    path('',include('geoApp.urls')), # import url z aplikacji
 ]
