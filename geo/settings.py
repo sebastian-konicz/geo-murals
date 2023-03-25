@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'geoApp','templates')
+            os.path.join(BASE_DIR, 'geoApp', 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

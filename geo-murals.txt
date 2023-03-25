@@ -17,7 +17,7 @@ pa_autoconfigure_django.py https://github.com/sebastian-konicz/geo-murals.git --
 cd ~/sebastiankonicz.pythonanywhere.com
 pip3.8 install --user pythonanywhere
 
-
+dja
 Mural
 - name
 - typ (art, commercial)
