@@ -1,0 +1,13 @@
+{% extends 'geoApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="mural">
+        <h2>{{ mural.title }}</h2>
+        <p>{{ mural.street }}</p>
+        <p>{{ mural.photo.url }}</p>
+        <img src="{{ mural.photo.url }}" class="img-fluid" alt="Responsive image">
+    </div>
+
+{% endblock %}

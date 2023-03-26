@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Mural
 import os
 import folium
@@ -6,38 +6,50 @@ import base64
 from folium import IFrame
 
 # Create your views here.
+# rendering map
 def home(request):
+    # filtrowanie po obszarze
+
     # objects
     murals = Mural.objects.all()
 
     # folium
-    map_graph = folium.Map(location=[52.145259, 21.051619], zoom_start=13)
-    m = map_graph
-    folium.LayerControl().add_to(m)
+    map = folium.Map(location=[52.145259, 21.051619], zoom_start=13)
+
+    folium.LayerControl().add_to(map)
+
+    # making map fit whole visible screen
+    # f = folium.Figure(height="100%")
+    # m.add(f)
 
     for mural in murals:
         coordinates = (mural.lat, mural.lon)
         tooltip = mural.title
-        popup = mural.photo
+        photo_url = mural.photo.url
 
         # encoded = base64.b64encode(open(mural.photo, 'rb').read())
         # html = '<img src="data:image/png;base64,{}">'.format
         # iframe = IFrame(html(encoded.decode('UTF-8')), width=400, height=350)
-        # popup = folium.Popup(iframe, max_width=400)
 
+
+        html = f'<img src="{photo_url}" height="300" width="400">'
+
+        popup = folium.Popup(html=html, max_width=400)
+
+        # adding to view
         folium.Marker(location=coordinates,
                       tooltip=tooltip,
-                      popup=popup).add_to(m)
-
-    ## adding to view
-
-    # folium.Marker(location=[52.1614339, 21.0267905],
-    #               tooltip='<b>Stackoverflow</b><br><br>2021.01.01').add_to(m)
-    # folium.Marker(location=[52.1419292, 21.0549329]).add_to(m)
+                      popup=popup).add_to(map)
 
     ## exporting
-    m = m._repr_html_()
-    context = {'my_map': m}
+    # making map able to render
+    map = map._repr_html_()
+    # ? sending data to home page?
+    context = {'mural_map': map, 'murals': murals}
 
     ## rendering
     return render(request, 'geoApp/home.html', context)
+
+def mural_detail(request, pk):
+    mural = get_object_or_404(Mural, pk=pk)
+    return render(request, 'geoApp/mural_detail.html', {'mural': mural})
