@@ -1,0 +1,28 @@
+charakterystyka strony
+- kod napisany w języku python
+- strona www, która jest mobile friendly tzn. szybko się ładuje i dobrze wyświetla się na komórce
+- baza danych murali (tytuł, autor, malarz, adres, szerokość, długość geograficzna, rok powstania, rodzaj [komercyjny, artystyczny, inny], fotografie)
+- mapa murali z pineskami po których najechaniu pojawia sie fotografia / fotografie muralu
+- możliwość logowania się użytkowników
+- użytkownik ma możliwość dodawania murali oraz ich zdjęć
+- możliwość głosowania na najlepsze zdjęcie w galerii
+
+
+- napisz kod potrzebny do postawienia tej strony oraz opisz poszczególne kroki, które powinienem wykonać by strona działała na urządzeniach mobilnych
+
+opisz mi kroki które powinienem wykonać oraz wskaż co powinienem zrobić by strona była live
+
+
+I want to create mobile friendly website which will show Warsaw murals. 
+Please provide me with complete code in python and step by step instruction how to make this website live and avaliable for all users, and what technologies should be used for it to work properly.
+Below is the characteristic what the website should have:
+- code written in Python
+- website thtat is mobile friendly i.e. it loads quickly and is adjusted to the mobile device screen
+- there is a database of murals with info consisting of, among others, title, author, painter, adres, longitude, latitude, creation date, type (commercial / art / other), photos of the mural
+- mural map with pins where the mural is located
+- after clicking the pin the picture of the mural should show (adjusted to the mobile device screen)
+- ability to log in users (with gmail account and facebook account) 
+- user should have ability to add mural by specifing location on the map
+- user should have ability to add mural photo
+- user should have ability to rate the mural photo (from 1 to 5 stars)
+- 
